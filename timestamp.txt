@@ -1,3 +1,36 @@
+create table patients
+(
+patient_id int primary key identity(1,1),
+patient_name varchar(50) not null,
+date_of_birth date not null,
+gender varchar(50),
+address varchar(50) not null,
+phone_number varchar(20),
+email varchar(50)unique
+);
+
+insert into patients(patient_name,date_of_birth,gender,address,phone_number,email)
+values('Ankeeta','1998-11-30', 'Female', 'kadma jamshedpur','8210044689','ankeeta.kumari@gmail.com');
+
+select* from patients 
+
+-----------------------------------------------------------------------------------------------------
+
+create table doctors
+(
+doctor_id int primary key identity(1,1),
+doctor_name varchar(50) not null,
+specialization varchar(50) not null,
+phone_number varchar(50) not null,
+email varchar(50) unique
+);
+
+insert into doctors(doctor_name,specialization,phone_number,email)
+values('Anshuman','dentist','9636253253','anshuman@gmail.com');
+
+select* from doctors
+
+-----------------------------------------------------------------------------------------------------------
 create table appointments
 (
 appointment_id int primary key identity(1,1),

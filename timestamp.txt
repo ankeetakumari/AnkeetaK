@@ -1,0 +1,12 @@
+create table appointments
+(
+appointment_id int primary key identity(1,1),
+appointment_date date,
+appointment_time timestamp not null,
+status varchar(50) check (status in ('scheduled','cancelled', 'completed')) default 'scheduled',
+patient_id int foreign key references patients(patient_id) on delete cascade,
+doctor_id int foreign key references doctors(doctor_id) on update cascade
+);
+
+insert into appointments(appointment_date,status,patient_id,doctor_id)
+values('2024-07-11','2024-07-11 12:00:00', 'scheduled', 1, 1);

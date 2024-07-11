@@ -1,0 +1,15 @@
+create table patients
+(
+patient_id int primary key identity(1,1),
+patient_name varchar(50) not null,
+date_of_birth date not null,
+gender varchar(50),
+address varchar(50) not null,
+phone_number varchar(20),
+email varchar(20) unique
+);
+
+insert into table patients(patient_name,date_of_birth,gender,address,phone_number,email)
+values('Ankeeta','1998-11-30', 'Female', 'kadma,jamshedpur', '8210044689', 'ankeeta.kumari@gmail.com');
+
+select* from patients where patient_id = 1
